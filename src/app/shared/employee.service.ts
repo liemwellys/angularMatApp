@@ -6,8 +6,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class EmployeeService {
 
-  constructor() { }
-
   form: FormGroup = new FormGroup({
     $key: new FormControl(null),
     fullName: new FormControl('', Validators.required),
@@ -19,4 +17,32 @@ export class EmployeeService {
     hireDate: new FormControl(''),
     isPermanent: new FormControl(false)
   });
+  
+  constructor(private service: EmployeeService) { }
+
+  initializeFormGroup() {
+    this.form.setValue({
+      $key: null,
+      fullName: '',
+      email: '',
+      mobile: '',
+      city: '',
+      gender: '1',
+      department: 0,
+      hireDate: '',
+      isPermanent: false
+    });
+  }
+
+  onClear(){
+    let $key = this.service.form.get('$key').value;
+    
+    // clear all controls
+    this.service.form.reset(); 
+    
+    // reset the controls to their default values
+    this.service.initializeFormGroup(); 
+    
+    this.service.form.patchValue({ $key });
+  }
 }
