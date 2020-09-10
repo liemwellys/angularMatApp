@@ -10,7 +10,9 @@
                     <input formControlName="email" matInput placeholder="Email">
                 </mat-form-field>                            
                 <mat-form-field>
-                    <input formControlName="mobile" matInput placeholder="Mobile">
+                    <input formControlName="mobile" matInput placeholder="Mobile*">
+                    <mat-error *ngIf="service.form.controls['mobile'].errors?.required">This field is mandatory</mat-error>
+                    <mat-error *ngIf="service.form.controls['mobile'].errors?.minlength">Minimum 8 characters needed.</mat-error>
                 </mat-form-field>
                 <mat-form-field>
                     <input formControlName="city" matInput placeholder="City">
