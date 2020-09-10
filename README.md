@@ -1,6 +1,6 @@
 # AngularMatApp
 
-Repository for a building a dummy front-end application based on Angular Material. This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
+Repository for a building a dummy front-end application based on Angular Material tutorial by [CodAffection](https://www.codaffection.com/angular-material-tutorial/build-angular-material-app-crud-form-design/). This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.6.
 
 ## Development server
 
